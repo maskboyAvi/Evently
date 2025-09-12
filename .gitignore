@@ -1,0 +1,43 @@
+# Build artifacts
+target/
+*.jar
+*.war
+*.class
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables (local dev)
+.env
+.env.local
+
+# Spring Boot DevTools
+spring-devtools-restart-marker
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Database files (H2, SQLite)
+*.db
+*.sqlite
+
+# Maven wrapper (optional - some keep it)
+.mvn/wrapper/maven-wrapper.jar
+
+# Application properties with secrets (use env vars instead)
+application-local.yml
+application-local.properties

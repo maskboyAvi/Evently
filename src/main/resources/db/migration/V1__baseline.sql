@@ -1,0 +1,3 @@
+-- Baseline migration for Evently schema
+-- Further migrations will add tables for users, events, bookings, etc.
+-- Keeping empty to let Flyway create schema history table and validate connectivity.

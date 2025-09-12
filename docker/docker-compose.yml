@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: evently
+      POSTGRES_PASSWORD: evently
+      POSTGRES_DB: evently
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evently"]
+      interval: 5s
+      retries: 5
+  app:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/evently
+  SPRING_DATASOURCE_USERNAME: evently
+  SPRING_DATASOURCE_PASSWORD: evently
+      APP_JWT_SECRET: ZmFrZV9kZXBsb3lfc2VjcmV0X2xvbmcyNTZiaXQ=
+  APP_CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8080:8080"

@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: evently_user
+      POSTGRES_PASSWORD: "ChangeMe_Strong_#2025"
+      POSTGRES_DB: evently
+    ports:
+      - "5434:5432" # Map container 5432 to host 5434 to avoid local conflicts
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evently_user -d evently"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/evently
+      SPRING_DATASOURCE_USERNAME: evently_user
+      SPRING_DATASOURCE_PASSWORD: "ChangeMe_Strong_#2025"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+    ports:
+      - "8081:8080" # Leave as 8080; don't start this while your local app is on 8080
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
