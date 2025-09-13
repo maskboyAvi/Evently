@@ -20,10 +20,10 @@ services:
       db:
         condition: service_healthy
     environment:
-  SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/evently
-  SPRING_DATASOURCE_USERNAME: evently
-  SPRING_DATASOURCE_PASSWORD: evently
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/evently
+      SPRING_DATASOURCE_USERNAME: evently
+      SPRING_DATASOURCE_PASSWORD: evently
       APP_JWT_SECRET: ZmFrZV9kZXBsb3lfc2VjcmV0X2xvbmcyNTZiaXQ=
-  APP_CORS_ORIGINS: http://localhost:5173
+      APP_CORS_ORIGINS: http://localhost:5173
     ports:
       - "8080:8080"

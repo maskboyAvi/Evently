@@ -81,10 +81,4 @@ Unique features, optimizations, or enhancements.
 Communication
 Clarity of explanations in documentation and video.
 
-Evently is your chance to showcase how you’d design and implement a backend system that balances correctness, performance, and scalability. We’re excited to see your solution! ✨
-
-I want you to give me entire project with all the steps required from setup till deployment. Also I want to learn the entire codebase as well so explain everything like concepts used and how that works.
-
-Hence explain what we doing, how it works. Then give code .
-
-Also Later I want to use docker to deploy but for all dependency I want to download on my local so first check what we neeed and then move ahead. Also keep in mind all necessary and optional tasks as I want to implement all at the end, Also later I will ask you to integrate this to some frontend as well but lets move step by step.
+Evently is your chance to showcase how you’d design and implement a backend system that balances correctness, performance, and scalability. We’re excited to see your solution!
