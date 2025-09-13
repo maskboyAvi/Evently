@@ -4,6 +4,8 @@ Production-grade Spring Boot backend for browsing events, secure ticket booking 
 
 - Live API Docs: https://evently-backend-ph3i.onrender.com/swagger-ui/index.html#/
 
+- Video Tutorial: https://youtu.be/mAG2Jp98pHg?si=LE6GExTJR_t5_fm0
+  
 ## At a Glance
 
 ![](./High_Level_architechture.png)
